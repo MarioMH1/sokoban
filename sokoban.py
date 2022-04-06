@@ -16,19 +16,19 @@ class sokoban:
     def __init__(self):
         pass
 
-    def leerMapa(self):
+    def leermapa(self):
         self.mapa = [
-            [3,3,3,3,3,3,3,3,3],
-            [3,1,1,1,1,1,1,1,3],
-            [3,1,1,0,1,4,1,3,3],
-            [3,1,1,1,1,1,1,1,3],
-            [3,1,1,1,1,1,1,1,3],
-            [3,3,3,3,3,3,3,3,3]
+            [4,4,4,4,4,4,4,4,4],
+            [4,1,1,1,1,1,1,1,4],
+            [4,1,1,0,1,3,1,1,4],
+            [4,1,1,1,1,1,1,1,4],
+            [4,1,1,1,1,1,1,1,4],
+            [4,4,4,4,4,4,4,4,4]
         ]
         self.perosnaje_fila = 3
         self.personaje_columna = 5
 
-    def imprimirMapa (self):
+    def imprimirmapa (self):
         for fila in self.mapa:
             print(fila)
 
@@ -43,61 +43,38 @@ class sokoban:
             self.perosnaje_columna += 1
         # 6. peronaje, meta
         elif (self.mapa[self.personaje_fila][self.perosnaje_columna] == 0
-        and self.mapa[self.perosnaje_fila] [self.perosnaje_columna + 1] == 4):
+        and self.mapa[self.perosnaje_fila] [self.perosnaje_columna + 1] == 3):
 
             self.mapa[self.perosnaje_fila][self.perosnaje_columna] = 1
             self.mapa[self.perosnaje_fila][self.perosnaje_columna + 1] = 5
             self.perosnaje_columna += 1
-        # 7. Muñeco, Caja, Espacio
-        elif (self.map[self.personaje_fila][self.perosnaje_columna] == 1 
-        and self.mapa[self.personaje_fila]
-        [self.personaje_fila + 1] == 2 and [self.map[self.personaje_columna + 2] == 0):
-      self.map[self.posy][self.posx] = 0
-      self.map[self.posy][self.posx + 1] = 1
-      self.map[self.posy][self.posx + 2] = 2
-      self.posx += 1
+        # 7. perosnaje, Caja, Espacio
+        elif (self.map[self.personaje_fila][self.perosnaje_columna] == 0
+        and self.mapa[self.personaje_fila][self.personaje_columna + 1] == 2
+        and self.mapa[self.perosnaje_fila][self.perosnaje_columna + 2] == 1):
 
-        #  8.  personaje, Caja, Meta
-        elif self.map[self.posy][self.posx] == 1 and self.map[self.posy][self.posx + 1] == 2 and        self.map[self.posy][self.posx + 2] == 4:
-      self.map[self.posy][self.posx] = 0
-      self.map[self.posy][self.posx + 1] = 1
-      self.map[self.posy][self.posx + 2] = 6
-        #  9.  personaje, meta, Espacio
-        elif self.map[self.posy][self.posx] == 5 and self.map[self.posy][self.posx + 1]== 0:
-    	self.map[self.posy][self.posx] = 4
-    	self.map[self.posy][self.posx + 1] = 1
+            self.mapa[self.personaje_fila][self.personaje_columna] = 1 #coloca un espacio donde estaba el personaje
+            self.mapa[self.perosnaje_fila][self.perosnaje_columna + 1] = 0 # coloca el perosnaje donde estaba la caja 
+            self.mapa[self.personaje_fila][self.perosnaje_columna + 2] = 2 # colocando la caja se encuentra donde estaba un espacio 
+            self.perosnaje_columna +=1
+        # 8. personaje , caja , meta
+        elif (self.mapa[self.personaje_fila][self.perosnaje_columna] == 0 
+        and self.mapa[self.perosnaje_fila][self.perosnaje_columna + 1] == 2 
+        and self.mapa[self.perosnaje_fila][self.personaje_columna + 2] == 3): 
 
 
+            self.mapa[self.perosnaje_fila][self.perosnaje_columna] = 1 # coloca un espacio dodne estaba el personaje
+            self.mapa[self.personaje_fila][self.perosnaje_columna + 1] = 0  # coloca el personaje donde esta la caja
+            self.mapa[self.perosnaje_fila][self.perosnaje_columna + 3] = 6 #coloca la caja donde esta la meta 
 
+            self.perosnaje_columna +=1
+    
 
-
-
-
-
-
-
-
-
-            
+      
 
     def moverizquierda(self):
         print("mover izquierda")
 
-        # 6. personaje, espacio
-        if (self.mapa[self.perosnaje_fila][self.personaje_columna] == self.personaje and              self.mapa[self.personaje_fila][self.personaje_columna - 1] ==self.espacio):
-
-            self.mapa[self.perosnaje_fila][self.personaje_columna] = self.espacio
-            self.mapa[self.perosnaje_fila][self.personaje_columna - 1] = self.personaje
-            self.perosnaje_columna -= 1
-        # 7. peronaje, meta
-        elif (self.mapa[self.personaje_fila][self.perosnaje_columna] == 0
-        and self.mapa[self.perosnaje_fila][self.perosnaje_columna - 1] == 3):
-
-            self.mapa[self.perosnaje_fila][self.perosnaje_columna] = 1
-            self.mapa[self.perosnaje_fila][self.perosnaje_columna - 1] = 3
-            self.perosnaje_columna -= 1
-
-            
     def moverarriba(self):
         print("mover arriba")
 
@@ -107,19 +84,19 @@ class sokoban:
     def jugar(self):
         instrucciones = "a-izquierda\nd-derecha\nw-arriba\ns-abajo"
         print(instrucciones)
-        self.leerMapa()
+        self.leermapa()
         while True:
-            self.imprimirMapa()
+            self.imprimirmapa()
             movimiento = input("mover hacia:")
-            if movimiento == "d":
-                self.derecha()
-            elif movimiento == "a":
+            if movimiento == "r"()
+            elif movimiento == "d":
                 self.moverizquierda()
-            elif movimiento == "w":
+            elif movimiento == "a":
                 self.movimientoarriba()
-            elif movimiento == "s":
+            elif movimiento == "w":
                 self.movimientoabajo()
-            elif movimiento == "q":
+            elif movimiento == "s":
+                self:movi ie
                 print("salir del juego")
                 break
 
@@ -128,10 +105,7 @@ juego = sokoban()
 juego.jugar()
 
 
-        
-            
-
-        
+    
        
 
 

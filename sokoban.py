@@ -87,16 +87,16 @@ class sokoban:
         self.leermapa()
         while True:
             self.imprimirmapa()
-            movimiento = input("mover hacia:")
-            if movimiento == "r"()
-            elif movimiento == "d":
+           if.movimiento == input("movimiento")
+                self.moverderecha()
+            elif.movimi == "d":
                 self.moverizquierda()
             elif movimiento == "a":
                 self.movimientoarriba()
             elif movimiento == "w":
                 self.movimientoabajo()
             elif movimiento == "s":
-                self:movi ie
+                self:movimientosalir
                 print("salir del juego")
                 break
 

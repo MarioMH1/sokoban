@@ -51,19 +51,19 @@ class sokoban:
         # 7. Muñeco, Caja, Espacio
         elif (self.map[self.personaje_fila][self.perosnaje_columna] == 1 
         and self.mapa[self.personaje_fila]
-[self.personaje_fila + 1] == 2 and [self.map[self.personaje_columna + 2] == 0):
+        [self.personaje_fila + 1] == 2 and [self.map[self.personaje_columna + 2] == 0):
       self.map[self.posy][self.posx] = 0
       self.map[self.posy][self.posx + 1] = 1
       self.map[self.posy][self.posx + 2] = 2
       self.posx += 1
 
-        #  8.  Muñeco, Caja, Meta
-    elif self.map[self.posy][self.posx] == 1 and self.map[self.posy][self.posx + 1] == 2 and self.map[self.posy][self.posx + 2] == 4:
+        #  8.  personaje, Caja, Meta
+        elif self.map[self.posy][self.posx] == 1 and self.map[self.posy][self.posx + 1] == 2 and        self.map[self.posy][self.posx + 2] == 4:
       self.map[self.posy][self.posx] = 0
       self.map[self.posy][self.posx + 1] = 1
       self.map[self.posy][self.posx + 2] = 6
-    #Muñeco-meta,  Espacio
-    elif self.map[self.posy][self.posx] == 5 and self.map[self.posy][self.posx + 1] == 0:
+        #  9.  personaje, meta, Espacio
+        elif self.map[self.posy][self.posx] == 5 and self.map[self.posy][self.posx + 1]== 0:
     	self.map[self.posy][self.posx] = 4
     	self.map[self.posy][self.posx + 1] = 1
 

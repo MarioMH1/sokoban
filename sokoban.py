@@ -43,15 +43,61 @@ class sokoban:
             self.perosnaje_columna += 1
         # 6. peronaje, meta
         elif (self.mapa[self.personaje_fila][self.perosnaje_columna] == 0
-        and self.mapa[self.perosnaje_fila][self.perosnaje_columna + 1] == 4):
+        and self.mapa[self.perosnaje_fila] [self.perosnaje_columna + 1] == 4):
 
             self.mapa[self.perosnaje_fila][self.perosnaje_columna] = 1
             self.mapa[self.perosnaje_fila][self.perosnaje_columna + 1] = 5
             self.perosnaje_columna += 1
+        # 7. Muñeco, Caja, Espacio
+        elif (self.map[self.personaje_fila][self.perosnaje_columna] == 1 
+        and self.mapa[self.personaje_fila]
+[self.personaje_fila + 1] == 2 and [self.map[self.personaje_columna + 2] == 0):
+      self.map[self.posy][self.posx] = 0
+      self.map[self.posy][self.posx + 1] = 1
+      self.map[self.posy][self.posx + 2] = 2
+      self.posx += 1
+
+        #  8.  Muñeco, Caja, Meta
+    elif self.map[self.posy][self.posx] == 1 and self.map[self.posy][self.posx + 1] == 2 and self.map[self.posy][self.posx + 2] == 4:
+      self.map[self.posy][self.posx] = 0
+      self.map[self.posy][self.posx + 1] = 1
+      self.map[self.posy][self.posx + 2] = 6
+    #Muñeco-meta,  Espacio
+    elif self.map[self.posy][self.posx] == 5 and self.map[self.posy][self.posx + 1] == 0:
+    	self.map[self.posy][self.posx] = 4
+    	self.map[self.posy][self.posx + 1] = 1
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
     def moverizquierda(self):
         print("mover izquierda")
 
+        # 6. personaje, espacio
+        if (self.mapa[self.perosnaje_fila][self.personaje_columna] == self.personaje and              self.mapa[self.personaje_fila][self.personaje_columna - 1] ==self.espacio):
+
+            self.mapa[self.perosnaje_fila][self.personaje_columna] = self.espacio
+            self.mapa[self.perosnaje_fila][self.personaje_columna - 1] = self.personaje
+            self.perosnaje_columna -= 1
+        # 7. peronaje, meta
+        elif (self.mapa[self.personaje_fila][self.perosnaje_columna] == 0
+        and self.mapa[self.perosnaje_fila][self.perosnaje_columna - 1] == 3):
+
+            self.mapa[self.perosnaje_fila][self.perosnaje_columna] = 1
+            self.mapa[self.perosnaje_fila][self.perosnaje_columna - 1] = 3
+            self.perosnaje_columna -= 1
+
+            
     def moverarriba(self):
         print("mover arriba")
 

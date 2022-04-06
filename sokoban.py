@@ -10,7 +10,7 @@ class sokoban:
 
     mapa =[]
 
-    perosnaje_fila = 0
+    personaje_fila = 0
     personaje_columna = 0
 
     def __init__(self):
@@ -38,12 +38,12 @@ class sokoban:
         #Movimientos Derecha
 
         # 5. personaje, espacio
-        if (self.mapa[self.perosnaje_fila][self.personaje_columna] == 0  
+        if (self.mapa[self.personaje_fila][self.personaje_columna] == 0  
         and self.mapa[self.personaje_fila][self.personaje_columna + 1] == 1):
 
-            self.mapa[self.perosnaje_fila][self.personaje_columna] = 1
-            self.mapa[self.perosnaje_fila][self.personaje_columna + 1] =  0
-            self.perosnaje_columna += 1
+            self.mapa[self.personaje_fila][self.personaje_columna] = 1
+            self.mapa[self.personaje_fila][self.personaje_columna + 1] =  0
+            self.personaje_columna += 1
             print("personaje,espacio")
       
 

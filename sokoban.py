@@ -45,7 +45,26 @@ class sokoban:
             self.mapa[self.personaje_fila][self.personaje_columna + 1] =  0
             self.personaje_columna += 1
             print("personaje,espacio")
-      
+
+        # 6. personaje, meta
+        if (self.mapa[self.personaje_fila][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila][self.personaje_columna + 1] == 3):
+
+            self.mapa[self.personaje_fila][self.personaje_columna] = 1
+            self.mapa[self.personaje_fila][self.personaje_columna + 1] = 5
+            self.personaje_columna += 1
+            print("personaje,meta")
+
+        # 7. personaje , caja , espacio
+        if (self.mapa[self.personaje_fila][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila][self.personaje_columna + 1] == 2
+        and self.mapa[self.personaje_fila][self.personaje_columna + 2] == 1):
+
+            self.mapa[self.personaje_fila][self.personaje_columna] =1
+            self.mapa[self.personaje_fila][self.personaje_columna + 1] = 2
+            self.mapa[self.personaje_fila][self.personaje_columna + 2] = 1
+            self.personaje_columna += 1
+            print("personaje,caja,espacio")
 
       
 

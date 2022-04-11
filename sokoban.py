@@ -221,7 +221,7 @@ class sokoban:
         # 22. personaje , caja_meta , meta
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 0
         and self.mapa[self.personaje_fila][self.persoanje_columna - 1] == 5
-        and self.mapa[self.personaje_fila][self.persoanje_columna - 1] ==3):
+        and self.mapa[self.personaje_fila][self.persoanje_columna - 2] ==3):
 
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 1
@@ -252,11 +252,36 @@ class sokoban:
 
         # 25.personaje_meta , caja ,espacio
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
-        and self.mapa[self.personaje_fila][self.personaje_columna - 1] == 2
+        and self.mapa[self.personaje_fila][self.personaje_columna -  1] == 2
         and self.mapa[self.persona_fila][self.personaje_fila - 2] == 1):
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 5
-            self.mapa[self.personaje_fila][self.personaje_columna] = 
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 2
+            self.mapa[self.personaje_fila][self.personaje_columna - 2] = 1
+            self.personaje_columna -=1
+            print("personaje_meta , caja ,espacio")
+
+        # 26.personaje_meta , caja , meta
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila][self.personaje_columna -  1] == 2
+        and self.mapa[self.persona_fila][self.personaje_fila - 2] == 1):
+
+            self.mapa[self.personaje_fila][self.personaje_columna] = 5
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 2
+            self.mapa[self.personaje_fila][self.personaje_columna - 2] = 1
+            self.personaje_columna -=1
+            print("personaje_meta , caja ,espacio")
+
+        # 27.personaje_meta , caja_meta , espacio
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila][self.personaje_columna -  1] == 2
+        and self.mapa[self.persona_fila][self.personaje_fila - 2] == 1):
+
+            self.mapa[self.personaje_fila][self.personaje_columna] = 5
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 2
+            self.mapa[self.personaje_fila][self.personaje_columna - 2] = 1
+            self.personaje_columna -=1
+            print("personaje_meta , caja ,espacio")
             
              
 

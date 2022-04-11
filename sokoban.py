@@ -168,18 +168,18 @@ class sokoban:
 
         
          # 17. personaje, espacio
-        if (self.mapa[self.personaje_fila][self.personaje_columna] == -1  
+        if (self.mapa[self.personaje_fila][self.personaje_columna] == 1  
         and self.mapa[self.personaje_fila][self.personaje_columna - 1] == 0):
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 0
-            self.mapa[self.personaje_fila][self.personaje_columna - 1] =  -1
-            self.personaje_columna -= -1
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] =  1
+            self.personaje_columna -= 1
             print("personaje,espacio")
 
         # 18. perosnaje , meta
 
-        elif(self.mapa[self.personaje_fila][self.personaje_columna] == - 1
-        and self.mapa[self.personaje_fila][self.persoanje_columna ]
+     #   elif(self.mapa[self.personaje_fila][self.personaje_columna] == - 1
+      #  and self.mapa[self.personaje_fila][self.persoanje_columna ]
         
 
 
@@ -204,6 +204,8 @@ class sokoban:
             movimiento = input("mover hacia:")
             if movimiento == "d":
                 self.moverderecha()
+            elif movimiento == "a":
+                self.moverizquierda()
                 
 
 juego = sokoban()

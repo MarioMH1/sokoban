@@ -181,7 +181,7 @@ class sokoban:
         and self.mapa[self.personaje_fila][self.personaje_columna -1] == 3):
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 1
-            self.mapa[self.personaje_fila][self.personaje -1] = 0
+            self.mapa[self.personaje_fila][self.personaje -1] = 5
             self.persoanje_columna -= 1
             print("personaje , meta")
 
@@ -202,8 +202,8 @@ class sokoban:
         and self.mapa[self.personaje_fila][self.personaje_columna - 2] == 3):
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 1
-            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 2
-            self.mapa[self.personaje_fila][self.personaje_columna - 2] = 3
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 0
+            self.mapa[self.personaje_fila][self.personaje_columna - 2] = 6
             self.personaje_columna -= 1
             print("personaje , caja ,meta")
 
@@ -213,10 +213,24 @@ class sokoban:
         and self.mapa[self.personaje_fila][self.persoanje_columna - 2] == 1):
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 1
-            self.mapa[self.personaje_fila][self.persoanje_columna - 1] = 5
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 5
             self.mapa[self.personaje_fila][self.personaje_columna - 2] = 1
-            self.persoanje_columna -= 1
+            self.personaje_columna -= 1
             print("personaje , caja_meta , espacio")
+
+        # 22. personaje , caja_meta , meta
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila][self.persoanje_columna - 1] == 5
+        and self.mapa[self.personaje_fila][self.persoanje_columna - 1] ==3):
+
+
+            self.mapa[self.personaje_fila][self.persoanje_columna] = 1
+            self.mapa[self.personaje_fila][self.persoanje_columna - 1] = 6
+            self.mapa[self.persoanje_fila][self.persoanje_columna - 2] = 3
+            self.persoanje_columna -= 1
+            print("personaje , caja_meta , meta")
+
+        # 23. personaje_meta ,espacio 
              
 
             

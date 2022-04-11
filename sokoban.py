@@ -234,13 +234,30 @@ class sokoban:
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
         and self.mapa[self.personaje_fila][self.personaje_columna - 1] == 1):
 
+            
             self.mapa[self.personaje_fila][self.personaje_columna] = 5
             self.mapa[self.personaje_fila][self.personaje_columna - 1] = 1
             self.persoanje_columna -= 1
             print("personaje , espacio")
 
         # 24. personaje_meta , meta
-        elif (self.mapa[self.personaje_fila][self.personajeje_columna] =
+        elif (self.mapa[self.personaje_fila][self.personajeje_columna] == 6
+        and self.mapa[self.personaje_columna][self.personaje_columna - 1] == 3):
+
+            
+            self.mapa[self.personaje_fila][self.personaje_columna] = 5
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 3
+            self.personaje_columna -= 1
+            print("personaje_meta , meta")
+
+        # 25.personaje_meta , caja ,espacio
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila][self.personaje_columna - 1] == 2
+        and self.mapa[self.persona_fila][self.personaje_fila - 2] == 1):
+
+            self.mapa[self.personaje_fila][self.personaje_columna] = 5
+            self.mapa[self.personaje_fila][self.personaje_columna] = 
+            
              
 
             

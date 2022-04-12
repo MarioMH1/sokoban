@@ -10,8 +10,6 @@ class sokoban:
 
     mapa =[]
 
-    personaje_fila = 0
-    personaje_columna = 0
 
     def __init__(self):
         pass
@@ -242,7 +240,7 @@ class sokoban:
             print("personaje , espacio")
 
         # 24. personaje_meta , meta
-        elif (self.mapa[self.personaje_fila][self.personajeje_columna] == 6
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 6
         and self.mapa[self.personaje_columna][self.personaje_columna - 1] == 3):
 
             
@@ -552,8 +550,7 @@ class sokoban:
             print("meta ,caja ,personaje")
 
 
-
-        
+            
         # 50. personaje_meta  , caja , meta
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
         and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 2

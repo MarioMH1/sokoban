@@ -298,8 +298,12 @@ class sokoban:
     # Mover Arriba
 
             
+    
     def moverarriba(self):
         print("mover arriba")
+
+
+        #Mover Arriba
 
 
         # 29. espacio , personaje
@@ -318,6 +322,8 @@ class sokoban:
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 3
             self.mapa[self.personaje_fila - 1][self.personaje_columna] = 1
+            self.persoanje_columna -= 1
+            print("meta , personaje")
 
             
         # 31. espacio, caja , persoanje
@@ -334,22 +340,15 @@ class sokoban:
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 3
         and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 2
         and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 0
+
+
+
+
+
+
+
+              
         
-        
-
-        
-
-
-
-
-    
-
-
-
-
-
-
-
     
     def moverabajo(self):
         print("mover abajo")

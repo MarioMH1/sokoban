@@ -329,17 +329,28 @@ class sokoban:
         # 31. espacio, caja , persoanje
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 1
         and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 2
-        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 0):       
+        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 0): 
+            
             
             self.mapa[self.personaje_fila][self.personaje_columna] = 1
             self.mapa[self.personaje_fila - 1][self.personaje_columna] = 2
             self.mapa[self.personaje_fila - 2][self.personaje_columna] = 0
+            self.personaje_columna -= 1
+            print("espacio , caja ,personaje")
 
 
         # 32. meta , caja , personaje
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 3
         and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 2
-        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 0):
+
+            self.mapa[self.personaje_fila][self.personaje_columna]= 3
+            self.mapa[self.personaje_fila - 1][self.personaje_columna] = 2
+            self.mapa[self.personaje_fila - 2][self.personaje_columna] = 0
+            self.personaje_columna -= 1
+            print("meta ,caja ,personaje")
+
+              
 
 
 

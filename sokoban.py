@@ -18,15 +18,16 @@ class sokoban:
 
     def leermapa(self):
         self.mapa = [
-            [4,4,4,4,4,4,4,4,4],
-            [4,1,1,1,1,1,1,1,4],
-            [4,3,2,1,0,2,1,3,4],
-            [4,1,1,1,1,1,1,1,4],
-            [4,1,1,1,1,1,1,1,4],
-            [4,4,4,4,4,4,4,4,4]
+            [4,4,4,4,4,4,4,4,4,4,4,4],
+            [4,1,1,1,1,3,1,1,1,1,1,4],
+            [4,1,1,1,1,2,1,1,1,1,1,4],
+            [4,3,1,2,1,0,1,1,2,1,3,4],
+            [4,1,1,1,1,2,1,1,1,1,1,4],
+            [4,1,1,1,1,3,1,1,1,1,1,4],
+            [4,4,4,4,4,4,4,4,4,4,4,4]
         ]
-        self.personaje_fila = 2
-        self.personaje_columna = 4
+        self.personaje_fila = 5
+        self.personaje_columna = 3
 
     def imprimirmapa (self):
         for fila in self.mapa:
@@ -551,25 +552,44 @@ class sokoban:
             print("meta ,caja ,personaje")
 
 
-            
 
         
+        # 50. personaje_meta  , caja , meta
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 2
+        and self.mapa[self.personaje_fila + 2][self.personaje_columna] == 3):
+        
+            self.mapa[self.personaje_fila][self.personaje_columna]= 5
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 2
+            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 1
+            self.personaje_columna += 1
+            print("meta ,caja ,personaje")
 
+
+
+        # 51. personaje_meta  , caja_meta , espacio
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 6
+        and self.mapa[self.personaje_fila + 2][self.personaje_columna] == 1):
+        
+            self.mapa[self.personaje_fila][self.personaje_columna]= 5
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 2
+            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 1
+            self.personaje_columna += 1
+            print("meta ,caja ,personaje")
 
 
         
-
-
-
-
-
-
-
-
-
-
-
-
+        # 52. personaje_meta  , caja_meta , Meta
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 6
+        and self.mapa[self.personaje_fila + 2][self.personaje_columna] == 3):
+        
+            self.mapa[self.personaje_fila][self.personaje_columna]= 5
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 1
+            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 3
+            self.personaje_columna += 1
+            print("meta ,caja ,personaje")
         
 
     def jugar(self):

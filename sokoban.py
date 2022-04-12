@@ -24,8 +24,8 @@ class sokoban:
             [4,1,1,1,1,3,1,1,1,1,1,4],
             [4,4,4,4,4,4,4,4,4,4,4,4]
         ]
-        self.personaje_fila = 5
-        self.personaje_columna = 3
+        self.personaje_fila = 3
+        self.personaje_columna = 5
 
     def imprimirmapa (self):
         for fila in self.mapa:
@@ -234,8 +234,8 @@ class sokoban:
         and self.mapa[self.personaje_fila][self.personaje_columna - 1] == 1):
 
             
-            self.mapa[self.personaje_fila][self.personaje_columna] = 5
-            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 1
+            self.mapa[self.personaje_fila][self.personaje_columna] = 1
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 5
             self.persoanje_columna -= 1
             print("personaje , espacio")
 
@@ -254,16 +254,16 @@ class sokoban:
         and self.mapa[self.personaje_fila][self.personaje_columna -  1] == 2
         and self.mapa[self.persona_fila][self.personaje_fila - 2] == 1):
 
-            self.mapa[self.personaje_fila][self.personaje_columna] = 5
-            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 2
-            self.mapa[self.personaje_fila][self.personaje_columna - 2] = 1
+            self.mapa[self.personaje_fila][self.personaje_columna] = 3
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 0
+            self.mapa[self.personaje_fila][self.personaje_columna - 2] = 2
             self.personaje_columna -=1
             print("personaje_meta , caja ,espacio")
 
         # 26.personaje_meta , caja , meta
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
         and self.mapa[self.personaje_fila][self.personaje_columna -  1] == 2
-        and self.mapa[self.persona_fila][self.personaje_fila - 2] == 1):
+        and self.mapa[self.persona_fila][self.personaje_fila - 2] == 3):
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 5
             self.mapa[self.personaje_fila][self.personaje_columna - 1] = 2
@@ -288,7 +288,7 @@ class sokoban:
         and self.mapa[self.persona_fila][self.personaje_fila - 2] == 3):
 
             self.mapa[self.personaje_fila][self.personaje_columna] = 5
-            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 6
+            self.mapa[self.personaje_fila][self.personaje_columna - 1] = 3
             self.mapa[self.personaje_fila][self.personaje_columna - 2] = 1
             self.personaje_columna -=1
             print("personaje_meta , caja ,espacio")

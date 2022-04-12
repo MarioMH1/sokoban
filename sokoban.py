@@ -295,15 +295,14 @@ class sokoban:
             print("personaje_meta , caja ,espacio")
             
 
+            
     # Mover Arriba
 
             
-    
     def moverarriba(self):
         print("mover arriba")
 
 
-        #Mover Arriba
 
 
         # 29. espacio , personaje
@@ -442,9 +441,73 @@ class sokoban:
             self.personaje_columna -= 1
             print("meta ,caja ,personaje")
 
-    
+
+
+    # Mover Abajo
     def moverabajo(self):
         print("mover abajo")
+
+
+        # 41. personaje , espacio
+        if (self.mapa[self.personaje_fila][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 1):
+        
+            self.mapa[self.personaje_fila][self.personaje_columna]= 1
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 0
+            self.personaje_columna += 1
+            print("meta ,caja ,personaje")
+
+
+            
+        # 42. personaje, meta 
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 1):
+        
+            self.mapa[self.personaje_fila][self.personaje_columna]= 1
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 0
+            self.personaje_columna += 1
+            print("meta ,caja ,personaje")
+
+
+        # 43. personaje , caja , espacio
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 3
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 6
+        and self.mapa[self.personaje_fila + 2][self.personaje_columna] == 5):
+
+            self.mapa[self.personaje_fila][self.personaje_columna]= 3
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 6
+            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 5
+            self.personaje_columna += 1
+            print("meta ,caja ,personaje")
+
+
+        # 44. personaje , caja , meta
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 2
+        and self.mapa[self.personaje_fila + 2][self.personaje_columna] == 3):
+
+            self.mapa[self.personaje_fila][self.personaje_columna]= 0
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 2
+            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 3
+            self.personaje_columna += 1
+            print("meta ,caja ,personaje")
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
     def jugar(self):
         instrucciones = "a-izquierda\nd-derecha\nw-arriba\ns-abajo"

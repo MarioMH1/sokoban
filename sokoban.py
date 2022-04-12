@@ -463,22 +463,22 @@ class sokoban:
             
         # 42. personaje, meta 
         elif (self.mapa[self.personaje_fila][self.personaje_columna] == 0
-        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 1):
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 3):
         
-            self.mapa[self.personaje_fila][self.personaje_columna]= 1
-            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 0
+            self.mapa[self.personaje_fila][self.personaje_columna]= 0
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 5
             self.personaje_columna += 1
             print("meta ,caja ,personaje")
 
 
         # 43. personaje , caja , espacio
-        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 3
-        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 6
-        and self.mapa[self.personaje_fila + 2][self.personaje_columna] == 5):
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 0
+        and self.mapa[self.personaje_fila + 1][self.personaje_columna] == 2
+        and self.mapa[self.personaje_fila + 2][self.personaje_columna] == 1):
 
             self.mapa[self.personaje_fila][self.personaje_columna]= 3
-            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 6
-            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 5
+            self.mapa[self.personaje_fila + 1][self.personaje_columna] = 2
+            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 1
             self.personaje_columna += 1
             print("meta ,caja ,personaje")
 
@@ -490,7 +490,7 @@ class sokoban:
 
             self.mapa[self.personaje_fila][self.personaje_columna]= 0
             self.mapa[self.personaje_fila + 1][self.personaje_columna] = 2
-            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 3
+            self.mapa[self.personaje_fila + 2][self.personaje_columna] = 1
             self.personaje_columna += 1
             print("meta ,caja ,personaje")
 

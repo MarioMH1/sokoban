@@ -348,9 +348,9 @@ class sokoban:
 
 
         # 33. espacio , caja_meta , personaje
-        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 1
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 0
         and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 6
-        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 0):
+        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 1):
             self.mapa[self.personaje_fila][self.personaje_columna]= 2
             self.mapa[self.personaje_fila - 1][self.personaje_columna] = 5
             self.mapa[self.personaje_fila - 2][self.personaje_columna] = 1
@@ -370,32 +370,32 @@ class sokoban:
 
 
         # 35. espacio, personaje_meta
-        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 1
-        and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 5):
-            self.mapa[self.personaje_fila][self.personaje_columna]= 0
-            self.mapa[self.personaje_fila - 1][self.personaje_columna] = 3
-            self.personaje_columna -= 1
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 1):
+            self.mapa[self.personaje_fila][self.personaje_columna]= 1
+            self.mapa[self.personaje_fila - 1][self.personaje_columna] = 5
+            self.personaje_fila -= 1
             print("meta ,caja ,personaje")
 
 
         # 36. meta , personaje_meta 
-        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 3
-        and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 5):
-            self.mapa[self.personaje_fila][self.personaje_columna]= 5
-            self.mapa[self.personaje_fila - 1][self.personaje_columna] = 3
-            self.personaje_columna -= 1
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
+        and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 3):
+            self.mapa[self.personaje_fila][self.personaje_columna]= 3
+            self.mapa[self.personaje_fila - 1][self.personaje_columna] = 5
+            self.personaje_fila -= 1
             print("meta ,caja ,personaje")
 
             
         # 37. espacio , caja , personaje_meta
-        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 1
+        elif (self.mapa[self.personaje_fila][self.personaje_columna] == 5
         and self.mapa[self.personaje_fila - 1][self.personaje_columna] == 2
-        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 5):
+        and self.mapa[self.personaje_fila - 2][self.personaje_columna] == 1):
 
             self.mapa[self.personaje_fila][self.personaje_columna]= 2
             self.mapa[self.personaje_fila - 1][self.personaje_columna] = 0
             self.mapa[self.personaje_fila - 2][self.personaje_columna] = 3
-            self.personaje_columna -= 1
+            self.personaje_fila -= 1
             print("meta ,caja ,personaje")
 
         # 38. meta, caja , personaje_meta
@@ -406,7 +406,7 @@ class sokoban:
             self.mapa[self.personaje_fila][self.personaje_columna]= 6
             self.mapa[self.personaje_fila - 1][self.personaje_columna] = 0
             self.mapa[self.personaje_fila - 2][self.personaje_columna] = 3
-            self.personaje_columna -= 1
+            self.personaje_fila -= 1
             print("meta ,caja ,personaje")
 
 
